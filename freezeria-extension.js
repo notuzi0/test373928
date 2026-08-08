@@ -5,25 +5,25 @@
         throw new Error('This extension must run unsandboxed.');
     }
 
-    class Freezeria {
+    class MineBlocks {
         constructor() {
             this.player = null;
         }
 
         getInfo() {
             return {
-                id: 'freezeria',
-                name: "Papa's Freezeria",
+                id: 'mineblocks',
+                name: 'MineBlocks',
                 blocks: [
                     {
                         opcode: 'open',
                         blockType: Scratch.BlockType.COMMAND,
-                        text: 'open Papa\\'s Freezeria'
+                        text: 'open MineBlocks'
                     },
                     {
                         opcode: 'close',
                         blockType: Scratch.BlockType.COMMAND,
-                        text: 'close Papa\\'s Freezeria'
+                        text: 'close MineBlocks'
                     }
                 ]
             };
@@ -51,7 +51,7 @@
 
             document.body.appendChild(this.player);
 
-            await this.player.ruffle().load('freezeria.swf');
+            await this.player.ruffle().load('MineBlocks.swf');
         }
 
         close() {
@@ -62,5 +62,5 @@
         }
     }
 
-    Scratch.extensions.register(new Freezeria());
+    Scratch.extensions.register(new MineBlocks());
 })(Scratch);
